@@ -333,11 +333,12 @@ O aplicativo deve iniciar em menos de 2 segundos em dispositivos modernos.
 
 Campos:
 
-[ Comprimento ]
-
 [ Parâmetro ]
 
 [ Senha Mestra ]
+
+
+[ Comprimento ]
 
 [ Gerar Senha ]
 
@@ -346,16 +347,6 @@ Resultado:
 [ Senha Gerada ]
 
 [ Copiar ]
-
----
-
-## Tema
-
-Suporte a:
-
-- Tema Claro
-- Tema Escuro
-- Tema do Sistema
 
 ---
 

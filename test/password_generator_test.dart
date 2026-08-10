@@ -83,6 +83,70 @@ void main() {
     expect(password, matches(RegExp(r'[!@#\$%&*+\-_=?]')));
   });
 
+  test('usa todas as categorias quando nenhuma é selecionada', () {
+    final password = PasswordGenerator.generatePassword(
+      masterPassword: masterPassword,
+      parameter: parameterA,
+      length: 4,
+      includeUppercase: false,
+      includeLowercase: false,
+      includeNumbers: false,
+      includeSymbols: false,
+    );
+
+    expect(password, hasLength(4));
+    expect(password, matches(RegExp(r'[A-Z]')));
+    expect(password, matches(RegExp(r'[a-z]')));
+    expect(password, matches(RegExp(r'\d')));
+    expect(password, matches(RegExp(r'[!@#\$%&*+\-_=?]')));
+  });
+
+  test('rejeita senha mestra vazia', () {
+    expect(
+      () => PasswordGenerator.generatePassword(
+        masterPassword: '',
+        parameter: parameterA,
+      ),
+      throwsA(isA<ArgumentError>()),
+    );
+  });
+
+  test('rejeita parâmetro vazio', () {
+    expect(
+      () => PasswordGenerator.generatePassword(
+        masterPassword: masterPassword,
+        parameter: '',
+      ),
+      throwsA(isA<ArgumentError>()),
+    );
+  });
+
+  test('rejeita comprimento inválido', () {
+    expect(
+      () => PasswordGenerator.generatePassword(
+        masterPassword: masterPassword,
+        parameter: parameterA,
+        length: 0,
+      ),
+      throwsA(isA<ArgumentError>()),
+    );
+  });
+
+  test('rejeita comprimento menor que o número de categorias selecionadas', () {
+    expect(
+      () => PasswordGenerator.generatePassword(
+        masterPassword: masterPassword,
+        parameter: parameterA,
+        length: 3,
+        includeUppercase: true,
+        includeLowercase: true,
+        includeNumbers: true,
+        includeSymbols: true,
+      ),
+      throwsA(isA<ArgumentError>()),
+    );
+  });
+
   test('geração de senha leva no máximo 500 ms', () {
     const repetitions = 8;
     const masterPasswordWarmUp = 'MinhaSenhaMestra2026';

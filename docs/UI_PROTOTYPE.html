@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER_KEY // Glassmorphic Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Dark Emerald Glassmorphism Theme */
+    body {
+      background-color: #080d0a;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 90% 90%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+    }
+
+    .font-mono {
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Glass Container Effect */
+    .glass-card {
+      background: rgba(15, 26, 20, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(16, 185, 129, 0.22);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(16, 185, 129, 0.08);
+    }
+
+    .glass-input {
+      background: rgba(5, 12, 8, 0.8);
+      border: 1px solid rgba(30, 58, 43, 0.8);
+    }
+
+    .glass-input:focus-within {
+      border-color: #10b981;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+    }
+
+    /* Slider Styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: #0d1a12;
+      border: 1px solid #1e3a2b;
+      border-radius: 9999px;
+      height: 8px;
+      outline: none;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #10b981;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      background: #34d399;
+    }
+
+    /* Switch Component */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #1a2e22;
+      border: 1px solid #2a4a37;
+      transition: .3s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #64748b;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #064e3b;
+      border-color: #10b981;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+      background-color: #10b981;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center p-4">
+
+  <!-- Main Card Container -->
+  <main class="w-full max-w-md glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden my-auto">
+    
+    <!-- Top Ambient Accent Line -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-[#10b981] to-transparent opacity-70"></div>
+
+    <!-- Header -->
+    <header class="flex items-center justify-between mb-6">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-2xl bg-[#064e3b]/50 border border-[#10b981]/30 flex items-center justify-center text-[#10b981]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-mono text-base font-bold tracking-wider text-emerald-100">CYBER_KEY</h1>
+          <p class="text-xs text-emerald-400/70">Modern Password Vault</p>
+        </div>
+      </div>
+      
+      <span class="px-2.5 py-1 rounded-full text-[10px] font-mono bg-[#064e3b]/40 border border-[#10b981]/40 text-[#10b981]">
+        v2.1
+      </span>
+    </header>
+
+    <!-- Password Output Container -->
+    <section class="mb-5">
+      <div class="relative flex items-center glass-input rounded-2xl transition-all duration-200">
+        <input 
+          type="text" 
+          id="password-output" 
+          readonly 
+          value="Generating..." 
+          class="w-full bg-transparent py-4 pl-4 pr-24 font-mono text-lg text-[#10b981] tracking-wider outline-none"
+        />
+        <button 
+          id="copy-btn" 
+          class="absolute right-2 bg-[#10b981] hover:bg-[#059669] text-[#080d0a] font-semibold px-4 py-2 rounded-xl text-xs font-sans transition-all duration-150 active:scale-95"
+        >
+          Copy
+        </button>
+      </div>
+
+      <!-- Toast Feedback -->
+      <div id="toast" class="h-4 text-[11px] text-[#10b981] font-mono mt-1.5 ml-1 opacity-0 transition-opacity duration-200">
+        &gt; password copied
+      </div>
+    </section>
+
+    <!-- Strength Meter -->
+    <section class="mb-6 bg-[#050c08]/60 border border-[#1e3a2b] rounded-2xl p-3.5">
+      <div class="flex justify-between items-center mb-2 text-xs font-mono">
+        <span class="text-emerald-400/60">STRENGTH_INDEX</span>
+        <span id="strength-label" class="text-[#10b981] font-semibold">STRONG</span>
+      </div>
+      <div class="w-full bg-[#1a2e22] h-2 rounded-full overflow-hidden flex gap-1 p-0.5" id="strength-bar">
+        <div class="h-full w-1/4 rounded-full bg-[#10b981] transition-all duration-300"></div>
+        <div class="h-full w-1/4 rounded-full bg-[#10b981] transition-all duration-300"></div>
+        <div class="h-full w-1/4 rounded-full bg-[#10b981] transition-all duration-300"></div>
+        <div class="h-full w-1/4 rounded-full bg-[#10b981] transition-all duration-300"></div>
+      </div>
+    </section>
+
+    <!-- Options Section -->
+    <section class="space-y-5 mb-6">
+      
+      <!-- Length Slider -->
+      <div>
+        <div class="flex justify-between items-center mb-2">
+          <label class="text-xs font-medium text-slate-300 uppercase tracking-wider">Length</label>
+          <span id="length-val" class="font-mono text-sm font-bold text-[#10b981] bg-[#064e3b]/30 border border-[#1e3a2b] px-2.5 py-0.5 rounded-lg">16</span>
+        </div>
+        <input 
+          type="range" 
+          id="length-slider" 
+          min="8" 
+          max="40" 
+          value="16" 
+          class="w-full cursor-pointer"
+        />
+      </div>
+
+      <!-- Switches -->
+      <div class="grid grid-cols-1 gap-3 pt-1">
+        
+        <div class="flex items-center justify-between p-3 rounded-2xl bg-[#050c08]/40 border border-[#1e3a2b]">
+          <span class="text-xs font-medium text-slate-200">Uppercase Characters (A-Z)</span>
+          <label class="switch">
+            <input type="checkbox" id="uppercase" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-2xl bg-[#050c08]/40 border border-[#1e3a2b]">
+          <span class="text-xs font-medium text-slate-200">Lowercase Characters (a-z)</span>
+          <label class="switch">
+            <input type="checkbox" id="lowercase" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-2xl bg-[#050c08]/40 border border-[#1e3a2b]">
+          <span class="text-xs font-medium text-slate-200">Numeric Digits (0-9)</span>
+          <label class="switch">
+            <input type="checkbox" id="numbers" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-2xl bg-[#050c08]/40 border border-[#1e3a2b]">
+          <span class="text-xs font-medium text-slate-200">Special Symbols (!@#$)</span>
+          <label class="switch">
+            <input type="checkbox" id="symbols" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Generate Button -->
+    <button 
+      id="generate-btn" 
+      class="w-full bg-[#10b981] hover:bg-[#059669] text-[#080d0a] font-bold py-3.5 rounded-2xl font-mono tracking-wider transition-all duration-150 active:scale-[0.98] cursor-pointer text-sm shadow-lg shadow-[#10b981]/20"
+    >
+      GENERATE_PASSWORD
+    </button>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const charSets = {
+        uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        lowercase: 'abcdefghijklmnopqrstuvwxyz',
+        numbers: '0123456789',
+        symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?'
+      };
+
+      const passwordOutput = document.getElementById('password-output');
+      const lengthSlider = document.getElementById('length-slider');
+      const lengthVal = document.getElementById('length-val');
+      const generateBtn = document.getElementById('generate-btn');
+      const copyBtn = document.getElementById('copy-btn');
+      const toast = document.getElementById('toast');
+      const strengthLabel = document.getElementById('strength-label');
+      const strengthBar = document.getElementById('strength-bar');
+
+      lengthSlider.addEventListener('input', (e) => {
+        lengthVal.textContent = e.target.value;
+      });
+
+      function generatePassword() {
+        let allowedChars = '';
+        if (document.getElementById('uppercase').checked) allowedChars += charSets.uppercase;
+        if (document.getElementById('lowercase').checked) allowedChars += charSets.lowercase;
+        if (document.getElementById('numbers').checked) allowedChars += charSets.numbers;
+        if (document.getElementById('symbols').checked) allowedChars += charSets.symbols;
+
+        if (!allowedChars) {
+          passwordOutput.value = 'SELECT_OPTION';
+          updateStrength(0);
+          return;
+        }
+
+        const length = parseInt(lengthSlider.value);
+        let password = '';
+        const array = new Uint32Array(length);
+        window.crypto.getRandomValues(array);
+
+        for (let i = 0; i < length; i++) {
+          password += allowedChars[array[i] % allowedChars.length];
+        }
+
+        scrambleEffect(password);
+      }
+
+      function scrambleEffect(finalPassword) {
+        const glyphs = '0123456789ABCDEF#$&*';
+        let iterations = 0;
+        const interval = setInterval(() => {
+          passwordOutput.value = finalPassword
+            .split('')
+            .map((char, index) => {
+              if (index < iterations) return finalPassword[index];
+              return glyphs.charAt(Math.floor(Math.random() * glyphs.length));
+            })
+            .join('');
+
+          if (iterations >= finalPassword.length) {
+            clearInterval(interval);
+            calculateStrength(finalPassword);
+          }
+          iterations += 1;
+        }, 20);
+      }
+
+      function calculateStrength(password) {
+        let score = 0;
+        if (password.length >= 10) score++;
+        if (password.length >= 14) score++;
+        if (/[A-Z]/.test(password) && /[a-z]/.test(password)) score++;
+        if (/[0-9]/.test(password) && /[^A-Za-z0-9]/.test(password)) score++;
+
+        updateStrength(score);
+      }
+
+      function updateStrength(score) {
+        const bars = strengthBar.children;
+        const labels = ['WEAK', 'MODERATE', 'STRONG', 'OPTIMAL'];
+        const colors = ['#ef4444', '#f59e0b', '#10b981', '#34d399'];
+
+        strengthLabel.textContent = labels[score - 1] || 'WEAK';
+        strengthLabel.style.color = colors[score - 1] || '#ef4444';
+
+        for (let i = 0; i < bars.length; i++) {
+          if (i < score) {
+            bars[i].style.backgroundColor = colors[score - 1] || '#ef4444';
+          } else {
+            bars[i].style.backgroundColor = '#1a2e22';
+          }
+        }
+      }
+
+      copyBtn.addEventListener('click', () => {
+        if (!passwordOutput.value || passwordOutput.value === 'SELECT_OPTION') return;
+        
+        const textArea = document.createElement('textarea');
+        textArea.value = passwordOutput.value;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        toast.style.opacity = '1';
+        setTimeout(() => {
+          toast.style.opacity = '0';
+        }, 2000);
+      });
+
+      generateBtn.addEventListener('click', generatePassword);
+
+      generatePassword();
+    });
+  </script>
+</body>
+</html>

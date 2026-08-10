@@ -1,122 +1,62 @@
 # Senhador
 
-> Gerador determinístico de senhas seguras.
+> Gerador determinístico de senhas seguras em Flutter.
 
-https://img.shields.io/badge/Flutter-3.x-blue.svg]()
-https://img.shields.io/badge/License-MIT-green.svg]()
-https://img.shields.io/badge/Platform-Web%20%7C%20Android-orange.svg]()
+---
 
 ## Visão Geral
 
-O Senhador é um aplicativo open source para geração determinística de senhas seguras.
+Senhador é um aplicativo de código aberto para gerar senhas fortes e previsíveis com segurança local.
 
-Ao invés de armazenar senhas em cofres ou serviços na nuvem, o Senhador gera senhas sob demanda a partir de:
-
-- Senha Mestra
-- Parâmetro (site, serviço ou aplicação)
-
-A mesma combinação sempre produz exatamente a mesma senha.
-
-Exemplo:
-
-Senha Mestra:
-
-MinhaSenhaMestra2026
-
-Parâmetro:
-
-gmail.com
-
-Resultado:
-
-Q@9mL2#rX7!cNp4&
-
-Nenhuma senha é armazenada.
-
-Nenhuma senha é enviada para servidores.
-
-Todas as operações ocorrem localmente no dispositivo.
+A partir de uma senha mestra e um parâmetro (site, serviço ou aplicação), o Senhador produz uma senha única e reprodutível. Não há armazenamento de senhas nem transmissão de dados sensíveis para servidores.
 
 ---
 
-## Objetivos
+## Por que usar o Senhador?
 
-O projeto foi criado para oferecer:
-
-- Privacidade máxima
-- Simplicidade de uso
-- Segurança moderna
-- Funcionamento offline
-- Reprodutibilidade das senhas
-- Independência de serviços na nuvem
+- Segurança offline: todas as operações acontecem no dispositivo.
+- Privacidade total: não há envio de dados para a nuvem.
+- Reprodutibilidade: a mesma combinação gera sempre a mesma senha.
+- Simplicidade: interface clara e foco em uso rápido.
 
 ---
 
-## Como Funciona
+## Como funciona
 
-Entrada:
+1. Informe a senha mestra.
+2. Digite o parâmetro do serviço.
+3. Ajuste tamanho e categorias de caracteres.
+4. Gere e copie a senha com um toque.
 
-Senha Mestra
-+
-Parâmetro
+### Tecnologia de geração
 
-↓
+- PBKDF2-SHA256 para derivação segura
+- HMAC-SHA256 para expansão de entropia
+- Embaralhamento determinístico para distribuição uniforme
 
-PBKDF2-SHA256
+### Resultado
 
-↓
-
-Derivação determinística
-
-↓
-
-Senha Forte
-
-Mesmas entradas:
-
-✅ Mesmo resultado
-
-Entradas diferentes:
-
-✅ Resultado diferente
+- Senha forte e compatível com requisitos modernos
+- Força estimada exibida para validação imediata
+- Histórico de parâmetros recentes para acesso rápido
 
 ---
 
-## Funcionalidades
+## Recursos principais
 
-### Versão 1.0
-
-- Gerar senhas determinísticas
-- Copiar senha
-- Configurar tamanho da senha
-- Mostrar/Ocultar senha mestre
-- Tema Claro/Escuro
-- Flutter Web
-- Android
-
-### Planejado
-
-- Favoritos
-- Perfis
-- Indicador de força
-- QR Code
-- Compatibilidade Hashapass
+- Geração determinística de senhas
+- Histórico de parâmetros recentes
+- Controle do comprimento da senha
+- Inclusão seletiva de maiúsculas, minúsculas, números e símbolos
+- Exibição de força estimada da senha
+- Cópia automática para área de transferência
+- Suporte a Flutter Web e Android
 
 ---
 
-## Tecnologias
+## Segurança e privacidade
 
-- Flutter
-- Dart
-- Flutter Web
-- Android
-- PBKDF2-SHA256
-
----
-
-## Segurança
-
-O Senhador segue os princípios:
+Senhador foi projetado com foco em:
 
 - Offline First
 - Privacy by Design
@@ -124,59 +64,45 @@ O Senhador segue os princípios:
 
 O aplicativo:
 
-✅ Não armazena senhas
-
-✅ Não armazena a senha mestre
-
-✅ Não transmite dados sensíveis
-
-✅ Não utiliza backend
-
-✅ Não depende de internet
+- ✅ Não armazena senhas
+- ✅ Não armazena a senha mestra
+- ✅ Não transmite dados sensíveis
+- ✅ Não utiliza backend
+- ✅ Não depende de internet
 
 ---
 
-## Documentação
+## Tecnologias usadas
 
-- SPECIFICATION.md
-- ARCHITECTURE.md
-- DECISIONS.md
-- ROADMAP.md
-- CONTRIBUTING.md
+- Flutter
+- Dart
+- PBKDF2-SHA256
+- `shared_preferences`
+- Flutter Web
+- Android
 
 ---
 
 ## Instalação
 
-### Ambiente
+### Pré-requisitos
 
-```bash
-flutter doctor
-```
+- Flutter 3.x
+- Dart SDK compatível
 
-### Clonar projeto
+### Passos
 
 ```bash
 git clone https://github.com/SEU_USUARIO/senhador.git
-```
-
-```bash
 cd senhador
-```
-
-### Dependências
-
-```bash
 flutter pub get
 ```
 
-### Executar Web
+### Executar localmente
 
 ```bash
 flutter run -d chrome
 ```
-
-### Executar Android
 
 ```bash
 flutter run
@@ -184,7 +110,7 @@ flutter run
 
 ---
 
-## Build
+## Build para produção
 
 ### Android
 
@@ -200,12 +126,22 @@ flutter build web --release
 
 ---
 
-## Licença
+## Documentação adicional
 
-MIT
+- `SPECIFICATION.md`
+- `ARCHITECTURE.md`
+- `DECISIONS.md`
+- `ROADMAP.md`
+- `CONTRIBUTING.md`
 
 ---
 
-## Missão
+## Missão do projeto
 
-Permitir que qualquer pessoa gere senhas fortes, seguras e reproduzíveis utilizando apenas uma senha mestre, sem bancos de dados, sincronização ou dependência de terceiros.
+Permitir a geração de senhas seguras, consistentes e fáceis de usar sem depender de cofres, sincronização ou serviços externos.
+
+---
+
+## Licença
+
+MIT

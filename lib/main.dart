@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'presentation/pages/home_page.dart';
+import 'presentation/themes/cyber_theme.dart';
 
 void main() {
   runApp(const SenhadorApp());
@@ -12,11 +13,9 @@ class SenhadorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Senhador',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-        useMaterial3: true,
-      ),
+      theme: CyberTheme.theme,
       home: const HomePage(),
     );
   }

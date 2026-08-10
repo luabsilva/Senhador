@@ -8,7 +8,7 @@ MVP funcional
 
 ### Entregas
 
-- Interface principal
+- Interface principal 
 - Senha Mestra
 - Parâmetro
 - Geração determinística
