@@ -4,7 +4,7 @@
 
 ## Visão Geral
 
-Este documento define a estratégia de testes do projeto Senhador.
+Este documento define a estratégia de testes do projeto Cyber_Key.
 
 O objetivo é garantir:
 
@@ -14,7 +14,7 @@ O objetivo é garantir:
 - Qualidade de software
 - Ausência de regressões
 
-Como o Senhador é um aplicativo relacionado à geração de credenciais, a validação do algoritmo é considerada crítica.
+Como o Cyber_Key é um aplicativo relacionado à geração de credenciais, a validação do algoritmo é considerada crítica.
 
 ---
 

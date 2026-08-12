@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Senhador",
+            "name": "Cyber_Key",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "Senhador (profile mode)",
+            "name": "Cyber_Key (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "Senhador (release mode)",
+            "name": "Cyber_Key (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

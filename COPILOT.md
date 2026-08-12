@@ -1,5 +1,5 @@
 # Projeto
-Senhador
+Cyber_Key
 
 # Objetivo
 Gerador determinístico de senhas seguras.

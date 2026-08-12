@@ -1,4 +1,4 @@
-# Senhador Copilot Instructions
+# Cyber_Key Copilot Instructions
 
 ## Commands
 
@@ -19,7 +19,7 @@ flutter build apk --release
 
 ## Architecture
 
-The app is a Flutter web/Android client with no backend or external API. `main.dart` creates `SenhadorApp`, which applies `CyberTheme` and displays `HomePage`.
+The app is a Flutter web/Android client with no backend or external API. `main.dart` creates `CyberKeyApp`, which applies `CyberTheme` and displays `HomePage`.
 
 The password-generation path is deliberately layered:
 

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:senhador/application/services/history_service.dart';
+import 'package:cyber_key/application/services/history_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {

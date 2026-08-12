@@ -2,7 +2,7 @@
 
 # Registro de Decisões Arquiteturais
 
-Este documento registra as principais decisões técnicas, arquiteturais e de produto tomadas durante o desenvolvimento do Senhador.
+Este documento registra as principais decisões técnicas, arquiteturais e de produto tomadas durante o desenvolvimento do Cyber_Key.
 
 Seu objetivo é preservar o contexto das decisões para facilitar futuras manutenções, evoluções e contribuições.
 
@@ -18,7 +18,7 @@ Data: 2026-08-07
 
 O nome oficial do projeto será:
 
-Senhador
+Cyber_Key
 
 ## Contexto
 
@@ -39,7 +39,7 @@ Foram avaliadas alternativas:
 
 ## Justificativa
 
-"Senhador" é um nome original, fácil de lembrar e comunica imediatamente a relação com senhas.
+"Cyber_Key" é um nome original, fácil de lembrar e comunica imediatamente a relação com senhas.
 
 Também oferece potencial para identidade visual própria.
 
@@ -127,7 +127,7 @@ Data: 2026-08-07
 
 ## Decisão
 
-O Senhador será desenvolvido seguindo o princípio Offline First.
+O Cyber_Key será desenvolvido seguindo o princípio Offline First.
 
 ## Contexto
 
@@ -164,7 +164,7 @@ Data: 2026-08-07
 
 ## Decisão
 
-O Senhador não armazenará:
+O Cyber_Key não armazenará:
 
 - Senha Mestra
 - Senhas Geradas
@@ -329,7 +329,7 @@ Data: 2026-08-07
 
 ## Decisão
 
-O Senhador não coletará:
+O Cyber_Key não coletará:
 
 - Nome
 - E-mail
@@ -405,7 +405,7 @@ Facilitar o acesso ao parâmetos usados com mais frequencia
 
 # Princípios Permanentes
 
-O Senhador deverá sempre seguir os seguintes princípios:
+O Cyber_Key deverá sempre seguir os seguintes princípios:
 
 1. Offline First
 2. Privacy by Design

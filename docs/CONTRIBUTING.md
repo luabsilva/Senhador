@@ -1,6 +1,6 @@
 # Contribuindo
 
-Obrigado por contribuir com o Senhador.
+Obrigado por contribuir com o Cyber_Key.
 
 ## Filosofia
 

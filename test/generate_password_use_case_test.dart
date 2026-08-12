@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:senhador/application/usecases/generate_password_use_case.dart';
-import 'package:senhador/domain/entities/password_request.dart';
+import 'package:cyber_key/application/usecases/generate_password_use_case.dart';
+import 'package:cyber_key/domain/entities/password_request.dart';
 
 void main() {
   const masterPassword = 'MinhaSenhaMestra2026';

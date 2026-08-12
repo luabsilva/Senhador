@@ -1,4 +1,4 @@
-package com.senhador.app
+package com.cyberkey.app
 
 import io.flutter.embedding.android.FlutterActivity
 

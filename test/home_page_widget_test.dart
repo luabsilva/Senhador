@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:senhador/domain/entities/generated_password.dart';
-import 'package:senhador/domain/entities/password_request.dart';
-import 'package:senhador/presentation/pages/home_page.dart';
-import 'package:senhador/presentation/widgets/glass_container.dart';
+import 'package:cyber_key/domain/entities/generated_password.dart';
+import 'package:cyber_key/domain/entities/password_request.dart';
+import 'package:cyber_key/presentation/pages/home_page.dart';
+import 'package:cyber_key/presentation/widgets/glass_container.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {

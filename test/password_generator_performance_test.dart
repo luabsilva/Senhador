@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:senhador/core/crypto/password_generator.dart';
+import 'package:cyber_key/core/crypto/password_generator.dart';
 
 void main() {
   test(

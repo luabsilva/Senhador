@@ -1,10 +1,10 @@
-# Senhador
+# Cyber_Key
 
 ## Visão Geral
 
-O Senhador é um aplicativo multiplataforma desenvolvido em Flutter para geração determinística de senhas seguras.
+O Cyber_Key é um aplicativo multiplataforma desenvolvido em Flutter para geração determinística de senhas seguras.
 
-Diferentemente dos gerenciadores de senhas tradicionais, o Senhador não armazena senhas em banco de dados, nuvem ou arquivos locais.
+Diferentemente dos gerenciadores de senhas tradicionais, o Cyber_Key não armazena senhas em banco de dados, nuvem ou arquivos locais.
 
 As senhas são geradas sob demanda a partir de:
 
@@ -377,7 +377,7 @@ GitHub Pages
 
 ## Política de Privacidade
 
-O Senhador não coleta:
+O Cyber_Key não coleta:
 
 - senhas
 - parâmetros

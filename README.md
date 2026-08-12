@@ -1,4 +1,4 @@
-# Senhador
+# Cyber_Key
 
 > Gerador determinístico de senhas seguras em Flutter.
 
@@ -6,13 +6,13 @@
 
 ## Visão Geral
 
-Senhador é um aplicativo de código aberto para gerar senhas fortes e previsíveis com segurança local.
+Cyber_Key é um aplicativo de código aberto para gerar senhas fortes e previsíveis com segurança local.
 
-A partir de uma senha mestra e um parâmetro (site, serviço ou aplicação), o Senhador produz uma senha única e reprodutível. Não há armazenamento de senhas nem transmissão de dados sensíveis para servidores.
+A partir de uma senha mestra e um parâmetro (site, serviço ou aplicação), o Cyber_Key produz uma senha única e reprodutível. Não há armazenamento de senhas nem transmissão de dados sensíveis para servidores.
 
 ---
 
-## Por que usar o Senhador?
+## Por que usar o Cyber_Key?
 
 - Segurança offline: todas as operações acontecem no dispositivo.
 - Privacidade total: não há envio de dados para a nuvem.
@@ -56,7 +56,7 @@ A partir de uma senha mestra e um parâmetro (site, serviço ou aplicação), o 
 
 ## Segurança e privacidade
 
-Senhador foi projetado com foco em:
+Cyber_Key foi projetado com foco em:
 
 - Offline First
 - Privacy by Design
@@ -93,8 +93,8 @@ O aplicativo:
 ### Passos
 
 ```bash
-git clone https://github.com/SEU_USUARIO/senhador.git
-cd senhador
+git clone https://github.com/luabsilva/cyber_key.git
+cd cyber_key
 flutter pub get
 ```
 

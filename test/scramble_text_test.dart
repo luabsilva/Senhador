@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:senhador/presentation/widgets/scramble_text.dart';
+import 'package:cyber_key/presentation/widgets/scramble_text.dart';
 
 void main() {
   testWidgets('anima e estabiliza o texto embaralhado',

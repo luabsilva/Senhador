@@ -1,8 +1,8 @@
-# Arquitetura do Projeto Senhador
+# Arquitetura do Projeto Cyber_Key
 
 ## Objetivo
 
-Definir a arquitetura de software do aplicativo Senhador, garantindo:
+Definir a arquitetura de software do aplicativo Cyber_Key, garantindo:
 
 - Simplicidade
 - Facilidade de manutenção
@@ -14,7 +14,7 @@ Definir a arquitetura de software do aplicativo Senhador, garantindo:
 
 # Visão Geral
 
-O Senhador será desenvolvido utilizando Flutter e seguirá uma arquitetura em camadas.
+O Cyber_Key será desenvolvido utilizando Flutter e seguirá uma arquitetura em camadas.
 
 Fluxo principal:
 

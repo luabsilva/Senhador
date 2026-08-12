@@ -4,17 +4,17 @@ import 'presentation/pages/home_page.dart';
 import 'presentation/themes/cyber_theme.dart';
 
 void main() {
-  runApp(const SenhadorApp());
+  runApp(const CyberKeyApp());
 }
 
-class SenhadorApp extends StatelessWidget {
-  const SenhadorApp({super.key});
+class CyberKeyApp extends StatelessWidget {
+  const CyberKeyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Senhador',
+      title: 'Cyber_Key',
       theme: CyberTheme.theme,
       home: const HomePage(),
     );
