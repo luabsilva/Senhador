@@ -36,39 +36,45 @@ class StrengthMeter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          children: List.generate(4, (index) {
-            final active = score > index;
-            return Expanded(
-              child: Container(
-                height: 10,
-                margin: EdgeInsets.only(left: index == 0 ? 0 : 8),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: active ? _activeColor : const Color(0xFF0D1A12),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: List.generate(4, (index) {
+              final active = score > index;
+              return Expanded(
+                child: Container(
+                  height: 10,
+                  margin: EdgeInsets.only(left: index == 0 ? 0 : 8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: active ? _activeColor : const Color(0xFF0D1A12),
+                  ),
+                ),
+              );
+            }),
+          ),
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Força da senha',
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTypography.label,
                 ),
               ),
-            );
-          }),
-        ),
-        const SizedBox(height: 10),
-        Row(
-          children: [
-            Text(
-              'Força da senha',
-              style: AppTypography.label,
-            ),
-            const Spacer(),
-            Text(
-              _label,
-              style: AppTypography.caption.copyWith(color: _activeColor),
-            ),
-          ],
-        ),
-      ],
+              const SizedBox(width: 8),
+              Text(
+                _label,
+                style: AppTypography.caption.copyWith(color: _activeColor),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
