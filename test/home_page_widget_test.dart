@@ -62,7 +62,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('v1.0'), findsOneWidget);
+    expect(find.text('v1.0.1'), findsOneWidget);
     expect(find.byTooltip('Configurações'), findsOneWidget);
 
     await tester.enterText(
@@ -224,7 +224,7 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    expect(find.text('v1.0'), findsOneWidget);
+    expect(find.text('v1.0.1'), findsOneWidget);
     expect(find.byType(ExpansionTile), findsNothing);
 
     await tester.tap(find.byTooltip('Configurações'));
